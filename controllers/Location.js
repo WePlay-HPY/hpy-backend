@@ -38,7 +38,9 @@ exports.locationGetCorrectCoordonnates = function(req, res, next) {
 
 
 exports.locationGetFromId = function(req, res, next) {
-        Node.findOne({id: req.params.id}, function(err, node) {
+        Node.findOne({id: req.params.id})
+        .populate('scores')
+        .exec(function(err, node) {
         if (err){
             res.send(err);
             return;
@@ -70,6 +72,7 @@ exports.locationGetArrayFromCoordonates = function(req, res, next) {
         maxDistance: req.params.distance || 15000, //15km
         spherical: true
     })
+    .populate('scores')
     .exec(function(err, nodes) {
         if (err){
             res.send(err);
