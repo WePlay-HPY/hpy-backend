@@ -113,6 +113,116 @@ Non utilisé pour le moment
 
 ### Localisation
 
+#### GET /api/location
+---
+  Récupère tous les noeuds contenus dans la base.
+
+* **URL**
+
+  `/api/location`
+
+* **Method:**
+
+  `GET`
+
+*  **URL Params**
+
+   **Required:**
+
+   None
+
+* **Success Response:**
+
+  Retourne une liste d'objet Node.
+
+  * **Code:** 200 <br />
+    **Content:** `[{node}, {node}, {node}, ..]`
+
+#### GET /api/location/{id}
+---
+  Récupère un noeud en fonction de son identifiant OpenStreetMap
+
+* **URL**
+
+  `/api/location/{id}`
+
+* **Method:**
+
+  `GET`
+
+*  **URL Params**
+
+   **Required:**
+
+   id: OpenStreetMap ID du noeud souhaité.
+
+* **Success Response:**
+
+  Retourne le noeud.
+
+  * **Code:** 200 <br />
+    **Content:** `[{node}, {node}, {node}, ..]`
+
+
+#### GET /api/location/lon={lon}&lat={lat}&distance={distance}
+---
+  Retourne l'ensemble des noeuds étant situé à une distance inférieure ou égale à 'distance' (en mètres) du point [lon; lat].
+
+* **URL**
+
+  `/api/location/lon={lon}&lat={lat}&distance={distance}`
+
+* **Method:**
+
+  `GET`
+
+*  **URL Params**
+
+   **Required:**
+
+   lon: longitude du centre du cercle de recherche en format décimal
+   lat: lattitude du centre du cercle de recherche en format décimal
+   distance: rayon du cercle de recherche
+
+* **Success Response:**
+
+  Retourne le tableau d'objets Node contenu dans le cercle de recherche.
+
+  * **Code:** 200 <br />
+    **Content:** `[{node}, {node}, {node}, ..]`
+
+
+### Score
+
+#### POST /api/score
+---
+  Publie un nouveau score auprès d'un noeud.
+
+* **URL**
+
+  `/api/score`
+
+* **Method:**
+
+  `POST`
+
+*  **Body Params**
+
+    Les paramètres peuvent être envoyés au format ``` application/x-www-form-urlencoded ``` ou ```application/json ```.
+
+   **Required:**
+
+   name: Nom du joueur (String)
+   node: ID OpenStreetMap du Noeud à associer au score
+   score: valeur du score
+
+* **Success Response:**
+
+  Retourne le tableau d'objets Node contenu dans le cercle de recherche.
+
+  * **Code:** 200 <br />
+    **Content:** `success: {true}`
+
 
 
 
