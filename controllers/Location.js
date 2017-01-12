@@ -1,5 +1,6 @@
 var request = require('request');
 var Node = require('../models/Node');
+var MiniGame = require('../models/MiniGame');
 var async = require('async');
 
 
@@ -49,7 +50,9 @@ exports.locationGetFromId = function(req, res, next) {
 
 exports.locationGetAll = function(req,res,next) {
     console.log("Finding all locations");
-    Node.find({}, function(err, nodes) {
+    Node.find({})
+    .populate('scores')
+    .exec(function(err, nodes) {
         if (err){
             res.send(err);
             return;
