@@ -4,37 +4,6 @@ var MiniGame = require('../models/MiniGame');
 var async = require('async');
 
 
-exports.locationGetCorrectCoordonnates = function(req, res, next) {
-        /* This piece of code has no point besides convertion OSM -> MongoDB */
-        Node.find({}, function(err, nodes) {
-        if (err){
-            res.send(err);
-            return;
-        }
-
-
-        async.each(nodes, function(node, callback) {
-            var loc = [node.toObject().lon, node.toObject().lat];
-            node.loc = loc;
-            node.lat = undefined;
-            node.lon = undefined;
-            node.save(function(err) {
-                if(err) {
-                    callback(err);
-                    return;
-                }
-                callback();
-            });
-        }, function(err) {
-            if (err){
-                res.send(err);
-                return;
-            }
-            res.json("Success");
-        });
-
-    });
-};
 
 
 exports.locationGetFromId = function(req, res, next) {
@@ -79,5 +48,40 @@ exports.locationGetArrayFromCoordonates = function(req, res, next) {
             return;
         }
         res.json(nodes);
+    });
+};
+
+
+// ONLY FOR DEBUG
+
+exports.locationGetCorrectCoordonnates = function(req, res, next) {
+        /* This piece of code has no point besides convertion OSM -> MongoDB */
+        Node.find({}, function(err, nodes) {
+        if (err){
+            res.send(err);
+            return;
+        }
+
+
+        async.each(nodes, function(node, callback) {
+            var loc = [node.toObject().lon, node.toObject().lat];
+            node.loc = loc;
+            node.lat = undefined;
+            node.lon = undefined;
+            node.save(function(err) {
+                if(err) {
+                    callback(err);
+                    return;
+                }
+                callback();
+            });
+        }, function(err) {
+            if (err){
+                res.send(err);
+                return;
+            }
+            res.json("Success");
+        });
+
     });
 };

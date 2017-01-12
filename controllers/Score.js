@@ -2,6 +2,8 @@ var request = require('request');
 var Score = require('../models/Score');
 var Node = require('../models/Node');
 
+var async = require('async');
+
 exports.scorePost = function(req, res, next) {
     // req.body.name
     // req.body.score
@@ -44,3 +46,38 @@ exports.scorePost = function(req, res, next) {
        });
    });
 };
+
+
+// ONLY FOR DEBUG
+exports.setScoreToAllPost = function(req, res, next) {
+    Node.find({ }, function(err, nodes) {
+        async.each(nodes, function(node, callback) {
+            var names = ["Stupeflip", "benjamindebotte", "djr", "MamyPGM44"]
+            var score = new Score({
+                name: names[Math.floor(Math.random()*names.length)],
+                score: Math.ceil((Math.random() * (5000 - 1) + 1)),
+                node: node._id
+            });
+            score.save(function(err) {
+                var scores = [];
+                scores.push(score);
+                node.scores = scores;
+                node.save(function(err) {
+                    if(err) {
+                        callback(err);
+                        return;
+                    }
+
+                    callback();
+                });
+            });
+        }, function(err) {
+            if (err){
+                res.send(err);
+                return;
+            }
+            res.json("Success");
+        });
+    });
+
+}
