@@ -1,15 +1,15 @@
 # Projet PIX Street - Backend
 
 ## Sommaire
-  1. [Installation](## Installation)
-    1. [Prérequis](### Prérequis)
-    1. [Installation](### Installation)
-  2. [Déploiement](## Déploiement)
-  3. [Contribution](## Contribution)
-  4. [Documentation de l'API](## Utilisation de l'API)
-  5. [Auteurs](## Auteurs)
-  6. [License](## License)
-  7. [Remerciements](## Remerciements)
+  1. [Installation](#Installation)
+    1. [Prérequis](#Prérequis)
+    1. [Installation](#Installation)
+  2. [Déploiement](#Déploiement)
+  3. [Contribution](#Contribution)
+  4. [Documentation de l'API](#Utilisation de l'API)
+  5. [Auteurs](#Auteurs)
+  6. [License](#License)
+  7. [Remerciements](#Remerciements)
 
 ## Description
 Le projet PixStreet est un écosystème basé sur une application mobile ludique s'appuyant sur les différents éléments urbains réels pour proposer un ensemble de mini-jeux sur mobile.
