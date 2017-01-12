@@ -72,6 +72,50 @@ npm start
 
 Le projet est déployé automatiquement sur le service Heroku accessible à l'adresse suivante : https://pixstreet-backend.herokuapp.com/
 
+## Utilisation de l'API
+
+L'API comporte 3 types d'objets.
+* **Node** : représente un élément urbain géolocalisé. Celui-ci peut contenir l'ensemble des scores ainsi que le mini-jeu associé.
+```
+{
+    "_id": Identifiant MongoDB (String),
+    "type": Type OpenStreetMap du noeud (String) (par défaut : "node"),
+    "id": Identifiant OSM (String),
+    "lat": lattitude (double),
+    "lon": longitude (double),
+    "tags": {
+      "amenity": "waste_basket" key:value fourni par OSM pour identifier les noeuds
+    },
+    "createdAt": Date,
+    loc : [longitude, lattitude] formaté sous le format 2dindex
+    "loc": [
+      -0.358763,
+      49.2090034
+    ],
+    "updatedAt": Date,
+    "scores": Tableau d'objets Score.
+  }
+```
+* **Score** : représente le score d'un joueur.
+```
+{
+  "_id": Identifiant MongoDB (String),
+  "name": Nom du joueur (String),
+  "score": Score (Int),
+  "node": Identifiant MongoDB du noeud associé au score,
+  "__v": 0,
+}
+```
+* **MiniGame** : représente un jeu associé à un élément urbain.
+```
+Non utilisé pour le moment
+```
+
+### Localisation
+
+
+
+
 
 ## Auteurs
 
