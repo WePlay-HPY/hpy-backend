@@ -52,9 +52,10 @@ exports.scorePost = function(req, res, next) {
 exports.setScoreToAllPost = function(req, res, next) {
     Node.find({ }, function(err, nodes) {
         async.each(nodes, function(node, callback) {
+            var names = ["Stupeflip", "benjamindebotte", "djr", "MamyPGM44"]
             var score = new Score({
-                name: "Stupeflip",
-                score: 4577,
+                name: names[Math.floor(Math.random()*names.length)],
+                score: Math.ceil((Math.random() * (5000 - 1) + 1)),
                 node: node._id
             });
             score.save(function(err) {
