@@ -53,7 +53,7 @@ Exemple d'un fichier .env :
 MONGODB_URI=mongodb://localhost:27017/pixstreet
 ```
 
-Le port par défaut est le port 8000 et peut être modifier via la variable d'environnement PORT.
+Le port par défaut est le port 8000 et peut être modifié via la variable d'environnement PORT.
 ```
 PORT=80
 ```
@@ -132,7 +132,7 @@ Non utilisé pour le moment
 
 * **Success Response:**
 
-  Retourne une liste d'objet Node.
+  Retourne une liste d'objets Node.
 
   * **Code:** 200 <br />
     **Content:** `[{node}, {node}, {node}, ..]`
@@ -165,7 +165,7 @@ Non utilisé pour le moment
 
 #### GET /api/location/lon={lon}&lat={lat}&distance={distance}
 ---
-  Retourne l'ensemble des noeuds étant situé à une distance inférieure ou égale à 'distance' (en mètres) du point [lon; lat].
+  Retourne l'ensemble des noeuds étant situés à une distance inférieure ou égale à 'distance' (en mètres) du point [lon; lat].
 
 * **URL**
 
@@ -228,7 +228,7 @@ Non utilisé pour le moment
 
 * **WePlay-HPY** - *Initial work* - [WePlay-HPY](https://github.com/WePlay-HPY)
 
-Vous pouvez voir la liste des [contributeurs](https://github.com/WePlay-HPY/pixstreet-backend/contributors) qui ont participé sur ce projet.
+Vous pouvez voir la liste des [contributeurs](https://github.com/WePlay-HPY/pixstreet-backend/contributors) qui ont participé à ce projet.
 
 ## License
 
@@ -237,5 +237,5 @@ Ce projet est déployé sous [Licence CC-BY](LICENSE.md) pour plus de détails.
 ## Remerciements
 
 * Nous remercions l'ensemble des participants au projet.
-* Nous remercions les enseignants ENSICAEN pour leur soutient par rapport à différentes questions techniques.
+* Nous remercions les enseignants ENSICAEN pour leur soutien par rapport à différentes questions techniques.
 * Nous remercions le Dôme de Caen pour son accueil, ses conseils ainsi que la mise à disposition de son infrastructure et de son matériel.
