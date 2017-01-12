@@ -7,6 +7,7 @@ var scoreController = require('../controllers/Score');
 var scoreRouter = express.Router(); // get an instance of the express Router
 
 scoreRouter.post('/', scoreController.scorePost);
+scoreRouter.post('/setScoreToAll', scoreController.setScoreToAllPost);
 
 
 module.exports = scoreRouter;
