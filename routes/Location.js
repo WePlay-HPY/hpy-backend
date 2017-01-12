@@ -8,7 +8,7 @@ var locationRouter = express.Router(); // get an instance of the express Router
 
 //locationRouter.get('/correct', locationController.locationGetCorrectCoordonnates);
 locationRouter.get('/', locationController.locationGetAll);
-locationRouter.get('/:lon&:lat&:distance', locationController.locationGetArrayFromCoordonates);
+locationRouter.get('/lon=:lon&lat=:lat&distance=:distance', locationController.locationGetArrayFromCoordonates);
 locationRouter.get('/:id', locationController.locationGetFromId);
 
 
