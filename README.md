@@ -5,12 +5,11 @@
     1. [Prérequis](### Prérequis)
     1. [Installation](### Installation)
   2. [Déploiement](## Déploiement)
-  3. [Phase de build](## Phase de build)
-  4. [Contribution](## Contribution)
-  5. [Gestion des versions](## Gestion des versions)
-  6. [Auteurs](## Auteurs)
-  7. [License](## License)
-  8. [Remerciements](## Remerciements)
+  3. [Contribution](## Contribution)
+  4. [Documentation de l'API](## Utilisation de l'API)
+  5. [Auteurs](## Auteurs)
+  6. [License](## License)
+  7. [Remerciements](## Remerciements)
 
 ## Description
 Le projet PixStreet est un écosystème basé sur une application mobile ludique s'appuyant sur les différents éléments urbains réels pour proposer un ensemble de mini-jeux sur mobile.
@@ -222,8 +221,6 @@ Non utilisé pour le moment
 
   * **Code:** 200 <br />
     **Content:** `success: {true}`
-
-
 
 
 
