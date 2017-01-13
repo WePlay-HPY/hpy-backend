@@ -35,6 +35,11 @@ git clone https://github.com/WePlay-HPY/pixstreet-backend.git
 
 La dernière version stable en développement est disponible sur la branche ```develop```.
 
+Vous pouvez également [télécharger directement la dernière version de démonstration](https://github.com/WePlay-HPY/pixstreet-backend/releases).
+
+
+## Déploiement
+
 Pour installer les dépendances et démarrer le projet.
 
 ```
@@ -58,18 +63,7 @@ Le port par défaut est le port 8000 et peut être modifié via la variable d'en
 PORT=80
 ```
 
-
-
-## Déploiement
-
-Le déploiement nécessite simplement l'exécution des commandes suivantes.
-
-```
-npm install
-npm start
-```
-
-Le projet est déployé automatiquement sur le service Heroku accessible à l'adresse suivante : https://pixstreet-backend.herokuapp.com/
+De plus, le projet est déployé automatiquement sur le service Heroku accessible à tout instant à l'adresse suivante : https://pixstreet-backend.herokuapp.com/
 
 ## Utilisation de l'API
 
